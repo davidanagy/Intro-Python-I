@@ -5,11 +5,14 @@
 x = 12
 
 def change_x():
+    # added "global" line
+    global x
     x = 99
 
 change_x()
 
 # This prints 12. What do we have to modify in change_x() to get it to print 99?
+
 print(x)
 
 
@@ -19,6 +22,8 @@ def outer():
     y = 120
 
     def inner():
+        # added "nonlocal" line
+        nonlocal y
         y = 999
 
     inner()
